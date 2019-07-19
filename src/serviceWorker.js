@@ -1,31 +1,31 @@
 //'use strict';
 
-// // CODELAB: Update cache names any time any of the cached files change.
-// const CACHE_NAME = 'static-cache-v1';
+// CODELAB: Update cache names any time any of the cached files change.
+const CACHE_NAME = 'static-cache-v1';
 
-// // CODELAB: Add list of files to cache here.
-// const FILES_TO_CACHE = [
-// ];
+// CODELAB: Add list of files to cache here.
+const FILES_TO_CACHE = [
+];
 
-// self.addEventListener('install', (evt) => {
-//   console.log('[ServiceWorker] Install');
-//   // CODELAB: Precache static resources here.
+window.addEventListener('install', (evt) => {
+  console.log('[ServiceWorker] Install');
+  // CODELAB: Precache static resources here.
 
-//   self.skipWaiting();
-// });
+  window.skipWaiting();
+});
 
-// self.addEventListener('activate', (evt) => {
-//   console.log('[ServiceWorker] Activate');
-//   // CODELAB: Remove previous cached data from disk.
+window.addEventListener('activate', (evt) => {
+  console.log('[ServiceWorker] Activate');
+  // CODELAB: Remove previous cached data from disk.
 
-//   self.clients.claim();
-// });
+  window.clients.claim();
+});
 
-// self.addEventListener('fetch', (evt) => {
-//   console.log('[ServiceWorker] Fetch', evt.request.url);
-//   // CODELAB: Add fetch event handler here.
+window.addEventListener('fetch', (evt) => {
+  console.log('[ServiceWorker] Fetch', evt.request.url);
+  // CODELAB: Add fetch event handler here.
 
-// });
+});
 
 const isLocalhost = Boolean(
   window.location.hostname === 'localhost' ||
