@@ -1,14 +1,31 @@
-// This optional code is used to register a service worker.
-// register() is not called by default.
+'use strict';
 
-// This lets the app load faster on subsequent visits in production, and gives
-// it offline capabilities. However, it also means that developers (and users)
-// will only see deployed updates on subsequent visits to a page, after all the
-// existing tabs open on the page have been closed, since previously cached
-// resources are updated in the background.
+// CODELAB: Update cache names any time any of the cached files change.
+const CACHE_NAME = 'static-cache-v1';
 
-// To learn more about the benefits of this model and instructions on how to
-// opt-in, read https://bit.ly/CRA-PWA
+// CODELAB: Add list of files to cache here.
+const FILES_TO_CACHE = [
+];
+
+self.addEventListener('install', (evt) => {
+  console.log('[ServiceWorker] Install');
+  // CODELAB: Precache static resources here.
+
+  self.skipWaiting();
+});
+
+self.addEventListener('activate', (evt) => {
+  console.log('[ServiceWorker] Activate');
+  // CODELAB: Remove previous cached data from disk.
+
+  self.clients.claim();
+});
+
+self.addEventListener('fetch', (evt) => {
+  console.log('[ServiceWorker] Fetch', evt.request.url);
+  // CODELAB: Add fetch event handler here.
+
+});
 
 const isLocalhost = Boolean(
   window.location.hostname === 'localhost' ||
