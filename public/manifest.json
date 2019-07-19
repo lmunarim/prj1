@@ -18,7 +18,7 @@
         "type": "image/png"
         }
   ],
-  "start_url": "https://munarim-app-prj1.herokuapp.com/public/index.html",
+  "start_url": "https://munarim-app-prj1.herokuapp.com/index.html",
   "display": "standalone",
   "theme_color": "#2F3BA2",
   "background_color": "#3E4EB8",
